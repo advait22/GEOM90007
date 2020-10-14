@@ -28,6 +28,7 @@ def get_location():
     center_point = (float(lat),float(long))
 
     df = pd.read_csv("data.csv",usecols=["name","description","longitude","latitude"])
+    df["description"] = df["description"].str.lower()
     location_details = df.loc[df['description'].str.contains(desc)]
     result = []
     for i in range(len(location_details)):

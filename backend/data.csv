@@ -2191,19 +2191,19 @@ year,name,description,longitude,latitude
 2019,Entrecote - Paris Steakhouse & Winebar,Cafes and Restaurants,144.98049,-37.83413
 2019,Bistro Gitan,Cafes and Restaurants,144.97931,-37.837140000000005
 2019,Sofitel Melbourne On Collins,Accommodation,144.9729235,-37.81376527
-2019,Bar Nacional,Bar,144.94982290000002,-37.82046726
+2019,Bar Nacional,Bars & Pubs,144.94982290000002,-37.82046726
 2019,Melbourne Museum,Museum,144.97373149999999,-37.80372847
-2019,Fad Gallery,Bar,144.968335,-37.8112354
+2019,Fad Gallery,Bars & Pubs,144.968335,-37.8112354
 2019,"Club 23, Crown Melbourne",Nightclub,144.9601749,-37.82243273
 2019,Festival Hall,Performance space,144.9461726,-37.81143777
-2019,Union Electric,Bar,144.9666889,-37.81177326
+2019,Union Electric,Bars & Pubs,144.9666889,-37.81177326
 2019,Charlie's Bar, ,144.9610159,-37.81325335
 2019,Live Performance Australia,Multi-use,144.962078,-37.81840835
 2019,Queen Victoria Market,Performance space,144.9575349,-37.80618853
 2019,Platform One,Nightclub,144.9623231,-37.81914828
-2019,Mesa Verde,Bar,144.96505249999998,-37.81204087
-2019,Seamstress Restaurant and Bar,Bar,144.9689575,-37.81046225
-2019,European Bier Café,bar,144.97110419999998,-37.81285332
+2019,Mesa Verde,Bars & Pubs,144.96505249999998,-37.81204087
+2019,Seamstress Restaurant and Bar,Bars & Pubs,144.9689575,-37.81046225
+2019,European Bier Café,Bars & Pubs,144.97110419999998,-37.81285332
 2019,Paris Cat Jazz Club,Venue,144.9607541,-37.81355853
 2019,Clique Bar,Nightclub,144.957393,-37.81961099
 2019,Bass Lounge, ,144.96993480000003,-37.81211909
@@ -2215,27 +2215,27 @@ year,name,description,longitude,latitude
 2019,AIM (Australian Institute of Music),Recording,144.9562246,-37.81726159
 2019,St Michael's Uniting Church,Church,144.9693521,-37.81452692
 2019,The Kelvin Club, ,144.9688372,-37.8132351
-2019,QV Melbourne,Bar,144.96467180000002,-37.8110354
-2019,Angel Music Bar,Bar,144.9725675,-37.81134962
+2019,QV Melbourne,Bars & Pubs,144.96467180000002,-37.8110354
+2019,Angel Music Bar,Bars & Pubs,144.9725675,-37.81134962
 2019,The Athenaeum, ,144.9674691,-37.81509906
 2019,San Marco Social Club,Community hall,144.9731763,-37.79503513
 2019,The Comedy Theatre,Theatre,144.9698959,-37.81021736
-2019,Turf Bar,Bar,144.9607534,-37.81553892
+2019,Turf Bar,Bars & Pubs,144.9607534,-37.81553892
 2019,Cherry Bar,Venue,144.970897,-37.81537653
 2019,University of Melbourne,Performance space,144.9604735,-37.79991021
 2019,Victorian Arts Centre Trust,Multi-use,144.968888,-37.82144365
 2019,Eden Bar,Nightclub,144.9677712,-37.81248789
-2019,Lustre Bar,Bar,144.965621,-37.81675634
+2019,Lustre Bar,Bars & Pubs,144.965621,-37.81675634
 2019,Roxanne Bar,Venue,144.96856090000003,-37.81229008
 2019,Athenaeum Theatre,Theatre,144.9673102,-37.81509631
-2019,The Palms At Crown,Bar,144.9600572,-37.82237606
-2019,The Bodega,Bar,144.9710336,-37.81088908
-2019,Max Bar and Restaurant,Bar,144.9611947,-37.81347367
+2019,The Palms At Crown,Bars & Pubs,144.9600572,-37.82237606
+2019,The Bodega,Bars & Pubs,144.9710336,-37.81088908
+2019,Max Bar and Restaurant,Bars & Pubs,144.9611947,-37.81347367
 2019,Abbey Road Institute,Recording,144.9663653,-37.82734192
 2019,Blue Diamond, ,144.96081999999998,-37.81569453
 2019,Pan Pacific Melbourne,Accommodation,144.9509892,-37.82511036
-2019,Lion Hotel at Melbourne Central,Bar,144.96260890000002,-37.81049466
-2019,The Drunken Poet,Bar,144.9556082,-37.80669547
+2019,Lion Hotel at Melbourne Central,Bars & Pubs,144.96260890000002,-37.81049466
+2019,The Drunken Poet,Bars & Pubs,144.9556082,-37.80669547
 2019,Urban Central Backpackers,Venue,144.9575823,-37.82795248
 2019,Bond Lounge Bar,Nightclub,144.9628289,-37.81818043
 2019,Carlton Yacht Club, ,144.96723899999998,-37.79997064
@@ -2243,8 +2243,8 @@ year,name,description,longitude,latitude
 2019,Mercury Lounge,Nightclub,144.9600159,-37.82242997
 2019,Crown Casino,Casino,144.96013359999998,-37.82248664
 2019,The Forum Theatre,Venue,144.9694951,-37.81672152
-2019,Eau de Vie,Bar,144.97181319999999,-37.81602795
-2019,Velvet Bar,Bar,144.9574646,-37.82371881
+2019,Eau de Vie,Bars & Pubs,144.97181319999999,-37.81602795
+2019,Velvet Bar,Bars & Pubs,144.9574646,-37.82371881
 2019,Inflation Nightclub/Top Yard Rooftop Bar,Nightclub,144.9570865,-37.81895269
 2019,The Langham,Hotel,144.98562040000002,-37.8344487
 2019,Duke Of Kent Hotel,Venue,144.9604994,-37.81071423
@@ -2253,12 +2253,12 @@ year,name,description,longitude,latitude
 2019,City Library,Library,144.9658122,-37.81686851
 2019,Euro House,Nightclub,144.9682176,-37.81115429999999
 2019,Level 3 at Crown,Nightclub,144.9600541,-37.82248527
-2019,Fiftyfive,Bar,144.9642232,-37.816976600000004
-2019,GoGo Bar,Bar,144.9703604,-37.81553872
-2019,Asian Beer Café,Bar,144.9634082,-37.81016156
+2019,Fiftyfive,Bars & Pubs,144.9642232,-37.816976600000004
+2019,GoGo Bar,Bars & Pubs,144.9703604,-37.81553872
+2019,Asian Beer Café,Bars & Pubs,144.9634082,-37.81016156
 2019,Flinders Station Hotel Backpackers,Hotel,144.9644989,-37.81739448
 2019,Town Hall Hotel,Hotel,144.9492425,-37.80422448
-2019,Sticky Institute,Bar,144.9660829,-37.81780039
+2019,Sticky Institute,Bars & Pubs,144.9660829,-37.81780039
 2019,Basement Discs,Performance space,144.9643969,-37.81539881
 2019,Capitano,Hotel,144.97050819999998,-37.79645167
 2019,Federation Square,Performance space,144.9689659,-37.81839878
@@ -2266,67 +2266,67 @@ year,name,description,longitude,latitude
 2019,Witches In Britches,Amusement/Theme Venue,144.9526862,-37.80900975
 2019,CQ Melbourne,Nightclub,144.9609037,-37.81589018
 2019,Colour Nightclub,Nightclub,144.96113590000002,-37.80447487
-2019,Testing Grounds,Bar,144.9675571,-37.82122195
+2019,Testing Grounds,Bars & Pubs,144.9675571,-37.82122195
 2019,Trapt Bar and Escape Rooms, ,144.9614075,-37.81267566
-2019,Hopscotch Urban Beer Bar,Bar,144.96374450000002,-37.82109278
+2019,Hopscotch Urban Beer Bar,Bars & Pubs,144.96374450000002,-37.82109278
 2019,East Melbourne Library,Library,144.9863774,-37.81527551
-2019,Highlander Bar,Bar,144.9580106,-37.81969181
-2019,The Red Hummingbird,Bar,144.9672238,-37.81048859
-2019,Good Heavens,Bar,144.97105280000002,-37.81207865
-2019,Berlin Bar,Bar,144.96837649999998,-37.81115704
+2019,Highlander Bar,Bars & Pubs,144.9580106,-37.81969181
+2019,The Red Hummingbird,Bars & Pubs,144.9672238,-37.81048859
+2019,Good Heavens,Bars & Pubs,144.97105280000002,-37.81207865
+2019,Berlin Bar,Bars & Pubs,144.96837649999998,-37.81115704
 2019,InterContinental Melbourne The Rialto,Accommodation,144.95792590000002,-37.81812958
 2019,Whitehart Bar, ,144.9618357,-37.81255177
 2019,AAMI Park,Performance space,144.9825546,-37.82396877
 2019,Munich Brauhaus,Hotel,144.95043330000001,-37.82407577
-2019,Robot Bar,Bar,144.9637045,-37.81710897
+2019,Robot Bar,Bars & Pubs,144.9637045,-37.81710897
 2019,Australian Centre for the Moving Image (ACMI),Multi-use,144.9690867,-37.81834623
 2019,Sheraton Hotel Melbourne,Accommodation,144.97264919999998,-37.81264603
 2019,P.J. O'Brien's,Hotel,144.966418,-37.82033398
 2019,Wonderland Under the Melbourne Star,Amusement/Theme Venue,144.9381841,-37.81170826
 2019,The Lui Bar, ,144.9571433,-37.81835318
 2019,Café Segovia, ,144.96431669999998,-37.81530881
-2019,Curtin House,Bar,144.9651337,-37.81197919
+2019,Curtin House,Bars & Pubs,144.9651337,-37.81197919
 2019,The Sub Club, ,144.9643399,-37.81739173
 2019,Union House Theatre University of Melbourne,Public University/College,144.9606324,-37.79991296
 2019,Max Watt's,Venue,144.96600930000002,-37.81474151
 2019,Church of All Nations,Church,144.9687595,-37.79596223
-2019,The Emerald Peacock,Bar,144.9655499,-37.81146925
+2019,The Emerald Peacock,Bars & Pubs,144.9655499,-37.81146925
 2019,The Croft Institute,Nightclub,144.9691239,-37.81205274
 2019,Baroq House, ,144.96404850000002,-37.81119498
 2019,XE54 Nightclub, ,144.9574234,-37.82794972
 2019,Arts Centre Melbourne,Performance space,144.968885,-37.82155286
 2019,National Gallery of Victoria,Amusement/Theme Venue,144.96956930000002,-37.8228987
 2019,Exford Hotel,Hotel,144.96743869999997,-37.81176295
-2019,Insignia On Flinders,Bar,144.95772240000002,-37.82013879
+2019,Insignia On Flinders,Bars & Pubs,144.95772240000002,-37.82013879
 2019,Immigration Museum,Museum,144.96049299999999,-37.81931971
 2019,New Market Studios, ,144.9476192,-37.80085694
 2019,Club Voltaire,Venue,144.95011530000002,-37.80432381
 2019,The Butterfly Club, ,144.96536899999998,-37.81569096
 2019,Colonial Hotel/Brown Alley Night Club,Hotel,144.9550937,-37.81460565
 2019,RMIT University,Gallery,144.9650363,-37.8090971
-2019,Trades Hall,Bar,144.96605580000002,-37.80683784
+2019,Trades Hall,Bars & Pubs,144.96605580000002,-37.80683784
 2019,Bird's Basement,Venue,144.95679719999998,-37.81120983
 2019,The Royal Melbourne Hotel, ,144.9551428,-37.81669851
 2019,The Plenary Hall,Multi-use,144.95602319999998,-37.82362714
-2019,Disco Bar,Bar,144.9590246,-37.80871597
+2019,Disco Bar,Bars & Pubs,144.9590246,-37.80871597
 2019,Ormond Hall,Performance space,144.94163319999998,-37.78783638
 2019,Margaret Court Arena,Performance space,144.9779329,-37.82259001
 2019,Victoria University,Multi-use,144.95490180000002,-37.81498069
 2019,Library at The Dock,Multi-use,144.9407561,-37.81987305
 2019,Sidney Myer Music Bowl, ,144.97482030000003,-37.82300094
-2019,The Barre,Bar,144.96900569999997,-37.82150031
+2019,The Barre,Bars & Pubs,144.96900569999997,-37.82150031
 2019,Co.,Nightclub,144.957813,-37.82363502
 2019,Young & Jackson,Hotel,144.9672103,-37.81736433
 2019,All Nations Backpackers Bar/Ubar, ,144.9550988,-37.82071952
-2019,Spaghetti Tree Restaurant,Bar,144.9714825,-37.81195322
+2019,Spaghetti Tree Restaurant,Bars & Pubs,144.9714825,-37.81195322
 2019,RMIT Student Union (RMIT Village),Public University/College,144.9561741,-37.80095037
 2019,Groove Live Bar and Terrace, ,144.95730559999998,-37.82371605
-2019,401 The Order,Bar,144.9633771,-37.80903643
+2019,401 The Order,Bars & Pubs,144.9633771,-37.80903643
 2019,Off The Hip Records,Multi-use,144.96126840000002,-37.81817022
 2019,Fabrique Bar,Nightclub,144.95944609999998,-37.82629052
 2019,Spice Market,Nightclub,144.96956540000002,-37.81548539
 2019,Sokol Melbourne,Hotel,144.9507603,-37.8033201
-2019,fortyfive downstairs,Bar,144.9729815,-37.81476782
+2019,fortyfive downstairs,Bars & Pubs,144.9729815,-37.81476782
 2019,Speakeasy HQ,Theatre,144.9569663,-37.82035793
 2019,The Comic's Lounge,Venue,144.9495408,-37.80449837
 2019,170 Russell/Billboard Nightclub,Nightclub,144.9679367,-37.81205225
@@ -2335,7 +2335,7 @@ year,name,description,longitude,latitude
 2019,The Carlton,Hotel,144.96761669999998,-37.81309470000001
 2019,Tramp Bar,Nightclub,144.9574698,-37.819775799999995
 2019,Southbank Library at Boyd,Library,144.961072,-37.82531715
-2019,The Irish Times Pub,Bar,144.9604635,-37.81619295
+2019,The Irish Times Pub,Bars & Pubs,144.9604635,-37.81619295
 2019,Building 8,Multi-use,144.9636252,-37.80877876
 2019,The Toff in Town,Venue,144.9652115,-37.81204362
 2019,The Princess Theatre,Theatre,144.9725545,-37.810683700000006
@@ -2343,7 +2343,7 @@ year,name,description,longitude,latitude
 2019,Melbourne Recital Centre,Performance space,144.9672846,-37.82430328
 2019,Melbourne Zoo,Performance space,144.95317340000003,-37.78535415
 2019,The Crafty Squire,Hotel,144.9682966,-37.81364054
-2019,Gin Palace,Bar,144.9674488,-37.81385598
+2019,Gin Palace,Bars & Pubs,144.9674488,-37.81385598
 2019,Kathleen Syme Library and Community Centre,Multi-use,144.9654894,-37.79861751
 2019,Assembly Hall,Performance space,144.96831819999997,-37.81482479
 2019,Rod Laver Arena,Performance space,144.97777390000002,-37.82258728
@@ -2351,7 +2351,7 @@ year,name,description,longitude,latitude
 2019,West Space Inc,Multi-use,144.9669503,-37.81328852
 2019,Soho Restaurant and Bar, ,144.9635855,-37.82109003
 2019,The Metropolitan Hotel,Hotel,144.9567624,-37.8129114
-2019,Ferdydurke,Bar,144.96535319999998,-37.81152723
+2019,Ferdydurke,Bars & Pubs,144.96535319999998,-37.81152723
 2019,The Hotel Windsor,Hotel,144.97313630000002,-37.81195937
 2019,Wolfs Lair,Bars & Pubs,144.96716999999998,-37.797509999999996
 2019,Eva on Drummond,Bars & Pubs,144.96927,-37.797709999999995
