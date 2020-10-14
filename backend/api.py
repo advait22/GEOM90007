@@ -25,7 +25,7 @@ def get_location():
         radius = request.args['r']
     else:
         return "Error: No value for argument radius "
-    center_point = (lat,long)
+    center_point = (float(lat),float(long))
 
     df = pd.read_csv("data.csv",usecols=["name","description","longitude","latitude"])
     location_details = df.loc[df['description'].str.contains(desc)]
@@ -34,11 +34,12 @@ def get_location():
         dict = {}
         long_t = location_details['longitude'].iloc[i]
         lat_t = location_details['latitude'].iloc[i]
-        test_point = (lat_t,long_t)
-        dis = distance.distance(center_point,test_point).km
-        if(dis<=int(radius)):
-            dict.update({"name" : location_details["name"].iloc[i], "description" : location_details["description"].iloc[i], "longitude": long_t,"latitude":lat_t})
-            result.append(dict)
+        if long_t.strip() and lat_t.strip():
+            test_point = (float(lat_t),float(long_t))
+            dis = distance.distance(center_point,test_point).km
+            if(float(dis)<=float(radius)):
+                dict.update({"name" : location_details["name"].iloc[i], "description" : location_details["description"].iloc[i], "longitude": long_t,"latitude":lat_t})
+                result.append(dict)
     response = pd.DataFrame(result)
     response = json.dumps(json.loads(response.to_json(orient='records')), indent=2)
     return response
