@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ReactMapGL, { Marker,Popup } from "react-map-gl";
+import ReactMapGL, { Marker} from "react-map-gl";
 import { Button, Icon } from 'semantic-ui-react';
 import DropdownExampleSearchSelection from './dropdown';
 import './Map.css'
