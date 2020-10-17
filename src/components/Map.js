@@ -41,29 +41,21 @@ export default class Map extends Component {
     }
 
     getSelectedValue = (value) => {
-       
-        this.setState({selectedCategory:value},()=>{
+        this.setState({selectedCategory:null,requestedData:[]},()=>{
+            this.setState({selectedCategory:value.toLowerCase()})
         })
         
     }
 
     getDataFromGoogle = (value) => {
         fetch('https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input='+value+
-        '&inputtype=textquery&fields=photos,formatted_address,name,rating,place_id,geometry,price_level,user_ratings_total,opening_hours/open_now&key=AIzaSyBZHgvSAwAB3OmZ-GRX115M90gp81nQ-Ks').then(res => res.json()).then(data => this.setState({markerClicked:true,placeId:data.candidates[0].place_id}, 
+        '&inputtype=textquery&fields=photos,formatted_address,name,rating,place_id,geometry,price_level,user_ratings_total,opening_hours/open_now&key=AIzaSyBZHgvSAwAB3OmZ-GRX115M90gp81nQ-Ks').then(res => res.json()).then(data => this.setState({markerClicked:true,placeId:data.candidates[0].place_id,ref:null}, 
             ()=>{
                 fetch('https://maps.googleapis.com/maps/api/place/details/json?place_id='+this.state.placeId+'&fields=address_component,adr_address,business_status,formatted_address,geometry,icon,name,photo,url,vicinity,formatted_phone_number,international_phone_number,opening_hours,website,price_level,rating&key=AIzaSyBZHgvSAwAB3OmZ-GRX115M90gp81nQ-Ks').then(res => res.json()).then(data => this.setState({googleReview:data.result},()=>{
-                    if(this.state.googleReview.hasOwnProperty('photo_reference')){
-                        fetch('https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference='+this.state.googleReview.candidates[0].photos[0].photo_reference+'&key=AIzaSyBZHgvSAwAB3OmZ-GRX115M90gp81nQ-Ks').then(res => {
-                            console.log(res)
-                        }).catch(err =>{ alert('Refresh the page, sorry for inconvinience')})    
-                    }
-                    else {
-                        this.setState({image:'No Images Provided'}, () => {
-                            console.log('')
-                        })
+                    this.setState({ref:this.state.googleReview.photos[0].photo_reference})
                     }
 
-            })).catch(err => {alert('Refresh the page, sorry for inconvinience')})
+            )).catch(err => {alert('Refresh the page, sorry for inconvinience')})
 
             })
             ).catch(er => {alert('Refresh the page, sorry for inconvinience')})
@@ -76,18 +68,17 @@ export default class Map extends Component {
     }
 
     getRadiusValue = (value) => {
-        let radiusValue = value.split(" ")[0]
-        console.log(radiusValue) 
-       this.setState({radius:radiusValue}, ()=>{})
+       this.setState({radius:value.split(" ")[0]}, ()=>{
+           console.log('')
+       })
     }
 
     getData = () =>{ 
         this.setState({isLoading:true}, () => {
         fetch('https://shielded-bastion-90356.herokuapp.com/apis/getLocation?name='+
-        this.state.selectedCategory+'&lat='+this.state.userLocation.latitude+'&long='+this.state.userLocation.longitude+'&r='+this.state.radius).then(
+        this.state.selectedCategory+'&lat='+this.state.userLocation.latitude+'&long='+Number(this.state.userLocation.longitude)+'&r='+this.state.radius).then(
                 res => res.json()).then(
                     data => this.setState({requestedData:data,isLoading:false}, () => {
-                        console.log(this.state)
                         this.setState(prevState =>({
                             viewport:{
                                 ...prevState.viewport,
@@ -165,9 +156,9 @@ export default class Map extends Component {
                     <Marker key = {index} longitude = {Number(marker.longitude)} latitude = {Number(marker.latitude)} >
                      {/* <div style={{fontWeight:900,fontSize:11,marginLeft:-40}}>{marker.name}</div> */}
                     <Icon name= 
-                    {this.state.selectedCategory === "Bars" ? "beer" : this.state.selectedCategory === "Restaurants" ? "food" :
-                    this.state.selectedCategory === "Theatre" ? "film" : this.state.selectedCategory === "Hotel" ? "hotel" :
-                    this.state.selectedCategory === "Tram" ? "train" : this.state.selectedCategory === "Train" ? "train" : "user times"}
+                    {this.state.selectedCategory === "bars" ? "beer" : this.state.selectedCategory === "restaurants" ? "food" :
+                    this.state.selectedCategory === "theatre" ? "film" : this.state.selectedCategory === "hotel" ? "hotel" :
+                    this.state.selectedCategory === "tram" ? "train" : this.state.selectedCategory === "train" ? "train" : "user times"}
                     size='small' onClick = {() => {this.getDataFromGoogle(marker.name)}}/>
                     </Marker>
                 </div>)
@@ -181,8 +172,10 @@ export default class Map extends Component {
       <Grid item xs = {4}>
     {this.state.markerClicked ? <div>
           <Paper style= {{width:400,height:400, opacity:1, position:'absolute',bottom:'50%',top:'20%',right:'35%',
-        padding:10}}>
-            <button style={{float: 'right',border:0, background:'transparent'}} onClick = {()=>{this.closeMarker()}}>X</button>
+        padding:10,overflow:"auto"}}>
+           <div> <button style={{float: 'right',border:0, background:'transparent'}} onClick = {()=>{this.closeMarker()}}>X</button></div>
+            <div style= {{width:'100%'}}><img src={"https://maps.googleapis.com/maps/api/place/photo?maxwidth=275&photoreference="+this.state.ref+'&key=AIzaSyBZHgvSAwAB3OmZ-GRX115M90gp81nQ-Ks'}></img></div><br/>
+           
             <span className = "text-values">Name</span> <span className = "values">{this.state.googleReview.name}</span> <br/>
             <span className = "text-values">Address</span> <span className = "values">{this.state.googleReview.formatted_address}</span> <br/>
             <span className = "text-values">Business Status</span> <span className = "values">{this.state.googleReview.business_status}</span><br/>
