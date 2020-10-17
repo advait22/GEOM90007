@@ -174,7 +174,7 @@ export default class Map extends Component {
           <Paper style= {{width:400,height:400, opacity:1, position:'absolute',bottom:'50%',top:'20%',right:'35%',
         padding:10,overflow:"auto"}}>
            <div> <button style={{float: 'right',border:0, background:'transparent'}} onClick = {()=>{this.closeMarker()}}>X</button></div>
-            <div style= {{width:'100%'}}><img src={"https://maps.googleapis.com/maps/api/place/photo?maxwidth=275&photoreference="+this.state.ref+'&key=AIzaSyBZHgvSAwAB3OmZ-GRX115M90gp81nQ-Ks'}></img></div><br/>
+            <div style= {{width:'100%'}}><img src={"https://maps.googleapis.com/maps/api/place/photo?maxwidth=275&photoreference="+this.state.ref+'&key=AIzaSyBZHgvSAwAB3OmZ-GRX115M90gp81nQ-Ks'} alt= ""></img></div><br/>
            
             <span className = "text-values">Name</span> <span className = "values">{this.state.googleReview.name}</span> <br/>
             <span className = "text-values">Address</span> <span className = "values">{this.state.googleReview.formatted_address}</span> <br/>
