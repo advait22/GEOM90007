@@ -1,0 +1,632 @@
+{
+  "meta" : {
+    "view" : {
+      "id" : "i35p-5m6u",
+      "name" : "City Circle Stops",
+      "assetType" : "invalid_datatype",
+      "averageRating" : 0,
+      "createdAt" : 1403760250,
+      "displayType" : "geoRows",
+      "downloadCount" : 633,
+      "hideFromCatalog" : false,
+      "hideFromDataJson" : false,
+      "indexUpdatedAt" : 1551226823,
+      "newBackend" : true,
+      "numberOfComments" : 0,
+      "oid" : 28356700,
+      "provenance" : "official",
+      "publicationAppendEnabled" : false,
+      "publicationDate" : 1522743452,
+      "publicationGroup" : 5805488,
+      "publicationStage" : "published",
+      "rowsUpdatedAt" : 1522743452,
+      "rowsUpdatedBy" : "4yi8-jvny",
+      "tableId" : 14976059,
+      "totalTimesRated" : 0,
+      "viewCount" : 86,
+      "viewLastModified" : 1522743452,
+      "viewType" : "tabular",
+      "approvals" : [ {
+        "reviewableUid" : "dh3m-ckxm",
+        "reviewedAt" : 1560825400,
+        "reviewedAutomatically" : false,
+        "state" : "approved",
+        "submissionId" : 800273,
+        "submissionObject" : "public_audience_request",
+        "submissionOutcome" : "change_audience",
+        "submittedAt" : 1486423090,
+        "workflowId" : 2180,
+        "reviewer" : {
+          "id" : "svy8-e7in",
+          "displayName" : "Johanna Hopper"
+        },
+        "submissionDetails" : {
+          "permissionType" : "READ"
+        },
+        "submissionOutcomeApplication" : {
+          "endedAt" : 1560825400,
+          "failureCount" : 0,
+          "startedAt" : 1560825400,
+          "status" : "success"
+        },
+        "submitter" : {
+          "id" : "4yi8-jvny",
+          "displayName" : "Will (CoM)"
+        }
+      } ],
+      "childViews" : [ "" ],
+      "columns" : [ {
+        "id" : -1,
+        "name" : "sid",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":sid",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "id",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":id",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "position",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":position",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "created_at",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":created_at",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "created_meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":created_meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "updated_at",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":updated_at",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "updated_meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":updated_meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : 352629243,
+        "name" : "the_geom",
+        "dataTypeName" : "point",
+        "fieldName" : "the_geom",
+        "position" : 1,
+        "renderTypeName" : "point",
+        "tableColumnId" : 63241122,
+        "cachedContents" : {
+          "non_null" : "28",
+          "null" : "0",
+          "top" : [ {
+            "item" : {
+              "coordinates" : [ 144.938645561825, -37.814464564872125 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ 144.94137823870162, -37.813414856197724 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ 144.94512063442602, -37.815426586135686 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ 144.94650837136655, -37.81865571347738 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ 144.94655055842398, -37.814591782869805 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ 144.94773306350976, -37.82215722680455 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ 144.95109855638137, -37.82190465062153 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ 144.95149406686252, -37.8131808636857 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ 144.95356912978238, -37.821539117626855 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ 144.95393532833103, -37.812487918072826 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ 144.95546153614245, -37.82097269970027 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ 144.95644059700524, -37.811771476718356 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ 144.95786314283018, -37.82023778673241 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ 144.95891745116262, -37.81105928060848 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ 144.96136850025573, -37.810354377085794 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ 144.9614014008424, -37.81922319307822 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ 144.96384957029932, -37.80961884837298 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ 144.964479208357, -37.818324403770184 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ 144.96634474519394, -37.808876998255194 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          }, {
+            "item" : {
+              "coordinates" : [ 144.96690455927876, -37.8176316450406 ],
+              "type" : "Point"
+            },
+            "count" : "1"
+          } ],
+          "cardinality" : "28"
+        },
+        "format" : { }
+      }, {
+        "id" : 352629244,
+        "name" : "MCCID_STR",
+        "dataTypeName" : "text",
+        "fieldName" : "mccid_str",
+        "position" : 2,
+        "renderTypeName" : "text",
+        "tableColumnId" : 63241123,
+        "cachedContents" : {
+          "non_null" : "0",
+          "null" : "28",
+          "cardinality" : "0"
+        },
+        "format" : { }
+      }, {
+        "id" : 352629245,
+        "name" : "MCCID_INT",
+        "dataTypeName" : "number",
+        "fieldName" : "mccid_int",
+        "position" : 3,
+        "renderTypeName" : "number",
+        "tableColumnId" : 63241124,
+        "cachedContents" : {
+          "largest" : "28",
+          "non_null" : "28",
+          "null" : "0",
+          "top" : [ {
+            "item" : "13",
+            "count" : "1"
+          }, {
+            "item" : "14",
+            "count" : "1"
+          }, {
+            "item" : "20",
+            "count" : "1"
+          }, {
+            "item" : "9",
+            "count" : "1"
+          }, {
+            "item" : "11",
+            "count" : "1"
+          }, {
+            "item" : "16",
+            "count" : "1"
+          }, {
+            "item" : "18",
+            "count" : "1"
+          }, {
+            "item" : "21",
+            "count" : "1"
+          }, {
+            "item" : "25",
+            "count" : "1"
+          }, {
+            "item" : "1",
+            "count" : "1"
+          }, {
+            "item" : "8",
+            "count" : "1"
+          }, {
+            "item" : "22",
+            "count" : "1"
+          }, {
+            "item" : "6",
+            "count" : "1"
+          }, {
+            "item" : "3",
+            "count" : "1"
+          }, {
+            "item" : "4",
+            "count" : "1"
+          }, {
+            "item" : "5",
+            "count" : "1"
+          }, {
+            "item" : "12",
+            "count" : "1"
+          }, {
+            "item" : "23",
+            "count" : "1"
+          }, {
+            "item" : "26",
+            "count" : "1"
+          }, {
+            "item" : "24",
+            "count" : "1"
+          } ],
+          "smallest" : "1",
+          "cardinality" : "28"
+        },
+        "format" : { }
+      }, {
+        "id" : 352629246,
+        "name" : "NAME",
+        "dataTypeName" : "text",
+        "fieldName" : "name",
+        "position" : 4,
+        "renderTypeName" : "text",
+        "tableColumnId" : 63241125,
+        "cachedContents" : {
+          "largest" : "William Street / La Trobe Street",
+          "non_null" : "28",
+          "null" : "0",
+          "top" : [ {
+            "item" : "William Street / La Trobe Street",
+            "count" : "1"
+          }, {
+            "item" : "Waterfront City / Docklands Drive",
+            "count" : "1"
+          }, {
+            "item" : "Victoria Street / La Trobe Street",
+            "count" : "1"
+          }, {
+            "item" : "Parliament / Collins Street",
+            "count" : "1"
+          }, {
+            "item" : "Spencer Street / Flinders Street",
+            "count" : "1"
+          }, {
+            "item" : "The Goods Shed / Wurundjeri Way",
+            "count" : "1"
+          }, {
+            "item" : "Exhibition Street / Flinders Street",
+            "count" : "1"
+          }, {
+            "item" : "Market Street / Flinders Street",
+            "count" : "1"
+          }, {
+            "item" : "Albert Street / Nicholson Street",
+            "count" : "1"
+          }, {
+            "item" : "Bourke Street / Harbour Esplanade",
+            "count" : "1"
+          }, {
+            "item" : "Spring Street / Flinders Street",
+            "count" : "1"
+          }, {
+            "item" : "Elizabeth Street / La Trobe Street",
+            "count" : "1"
+          }, {
+            "item" : "Central Pier / Harbour Esplanade",
+            "count" : "1"
+          }, {
+            "item" : "Nicholson Street / Victoria Parade",
+            "count" : "1"
+          }, {
+            "item" : "Docklands Park / Harbour Esplanade",
+            "count" : "1"
+          }, {
+            "item" : "King Street / La Trobe Street",
+            "count" : "1"
+          }, {
+            "item" : "Queen Street / La Trobe Street",
+            "count" : "1"
+          }, {
+            "item" : "Russell Street / Flinders Street",
+            "count" : "1"
+          }, {
+            "item" : "Swanston Street / Flinders Street",
+            "count" : "1"
+          }, {
+            "item" : "Russell Street / La Trobe Street",
+            "count" : "1"
+          } ],
+          "smallest" : "Albert Street / Nicholson Street",
+          "cardinality" : "28"
+        },
+        "format" : { }
+      }, {
+        "id" : 352629247,
+        "name" : "XORG",
+        "dataTypeName" : "text",
+        "fieldName" : "xorg",
+        "position" : 5,
+        "renderTypeName" : "text",
+        "tableColumnId" : 63241126,
+        "cachedContents" : {
+          "largest" : "GIS Team",
+          "non_null" : "28",
+          "null" : "0",
+          "top" : [ {
+            "item" : "GIS Team",
+            "count" : "28"
+          } ],
+          "smallest" : "GIS Team",
+          "cardinality" : "1"
+        },
+        "format" : { }
+      }, {
+        "id" : 352629248,
+        "name" : "XSOURCE",
+        "dataTypeName" : "text",
+        "fieldName" : "xsource",
+        "position" : 6,
+        "renderTypeName" : "text",
+        "tableColumnId" : 63241127,
+        "cachedContents" : {
+          "largest" : "Mapbase",
+          "non_null" : "28",
+          "null" : "0",
+          "top" : [ {
+            "item" : "Mapbase",
+            "count" : "28"
+          } ],
+          "smallest" : "Mapbase",
+          "cardinality" : "1"
+        },
+        "format" : { }
+      }, {
+        "id" : 352629249,
+        "name" : "XDATE",
+        "dataTypeName" : "number",
+        "fieldName" : "xdate",
+        "position" : 7,
+        "renderTypeName" : "number",
+        "tableColumnId" : 63241128,
+        "cachedContents" : {
+          "largest" : "20111018",
+          "non_null" : "28",
+          "null" : "0",
+          "top" : [ {
+            "item" : "20111018",
+            "count" : "28"
+          } ],
+          "smallest" : "20111018",
+          "cardinality" : "1"
+        },
+        "format" : { }
+      }, {
+        "id" : 352629250,
+        "name" : "STOP_NO",
+        "dataTypeName" : "text",
+        "fieldName" : "stop_no",
+        "position" : 8,
+        "renderTypeName" : "text",
+        "tableColumnId" : 63241129,
+        "cachedContents" : {
+          "largest" : "D6",
+          "non_null" : "28",
+          "null" : "0",
+          "top" : [ {
+            "item" : "8",
+            "count" : "3"
+          }, {
+            "item" : "2",
+            "count" : "2"
+          }, {
+            "item" : "10",
+            "count" : "2"
+          }, {
+            "item" : "4",
+            "count" : "2"
+          }, {
+            "item" : "6",
+            "count" : "2"
+          }, {
+            "item" : "5",
+            "count" : "2"
+          }, {
+            "item" : "3",
+            "count" : "2"
+          }, {
+            "item" : "1",
+            "count" : "2"
+          }, {
+            "item" : "7",
+            "count" : "2"
+          }, {
+            "item" : "9",
+            "count" : "1"
+          }, {
+            "item" : "D1",
+            "count" : "1"
+          }, {
+            "item" : "D2",
+            "count" : "1"
+          }, {
+            "item" : "D5",
+            "count" : "1"
+          }, {
+            "item" : "D3",
+            "count" : "1"
+          }, {
+            "item" : "D11",
+            "count" : "1"
+          }, {
+            "item" : "D10",
+            "count" : "1"
+          }, {
+            "item" : "D4",
+            "count" : "1"
+          }, {
+            "item" : "D6",
+            "count" : "1"
+          } ],
+          "smallest" : "1",
+          "cardinality" : "18"
+        },
+        "format" : { }
+      } ],
+      "grants" : [ {
+        "inherited" : false,
+        "type" : "viewer",
+        "flags" : [ "public" ]
+      } ],
+      "metadata" : {
+        "geo" : {
+          "parentUid" : "dh3m-ckxm",
+          "isNbe" : true
+        }
+      },
+      "owner" : {
+        "id" : "by7m-q3n8",
+        "displayName" : "City of Melbourne Open Data Team",
+        "profileImageUrlLarge" : "/api/users/by7m-q3n8/profile_images/LARGE",
+        "profileImageUrlMedium" : "/api/users/by7m-q3n8/profile_images/THUMB",
+        "profileImageUrlSmall" : "/api/users/by7m-q3n8/profile_images/TINY",
+        "screenName" : "City of Melbourne Open Data Team",
+        "type" : "interactive",
+        "userSegment" : "site_member",
+        "flags" : [ "mayBeStoriesCoOwner" ]
+      },
+      "query" : { },
+      "rights" : [ "read" ],
+      "tableAuthor" : {
+        "id" : "by7m-q3n8",
+        "displayName" : "City of Melbourne Open Data Team",
+        "profileImageUrlLarge" : "/api/users/by7m-q3n8/profile_images/LARGE",
+        "profileImageUrlMedium" : "/api/users/by7m-q3n8/profile_images/THUMB",
+        "profileImageUrlSmall" : "/api/users/by7m-q3n8/profile_images/TINY",
+        "screenName" : "City of Melbourne Open Data Team",
+        "type" : "interactive",
+        "userSegment" : "site_member",
+        "flags" : [ "mayBeStoriesCoOwner" ]
+      },
+      "flags" : [ "default", "restorable", "restorePossibleForType" ]
+    }
+  },
+  "data" : [ [ "row-yia2~9p8c_i4qb", "00000000-0000-0000-D896-B1A0E4071CF0", 0, 1522743452, null, 1522743452, null, "{ }", "POINT (144.96690455927876 -37.8176316450406)", null, "1", "Swanston Street / Flinders Street", "GIS Team", "Mapbase", "20111018", "5" ]
+, [ "row-sqcs-qer2.fzxg", "00000000-0000-0000-AAD8-34D28D23678D", 0, 1522743452, null, 1522743452, null, "{ }", "POINT (144.964479208357 -37.818324403770184)", null, "2", "Elizabeth Street / Flinders Street", "GIS Team", "Mapbase", "20111018", "4" ]
+, [ "row-my4i_6yqk~szwg", "00000000-0000-0000-2EB0-F9D16C692234", 0, 1522743452, null, 1522743452, null, "{ }", "POINT (144.9614014008424 -37.81922319307822)", null, "3", "Market Street / Flinders Street", "GIS Team", "Mapbase", "20111018", "3" ]
+, [ "row-6tcm~qdvp_js5w", "00000000-0000-0000-7D15-F8C136249085", 0, 1522743452, null, 1522743452, null, "{ }", "POINT (144.95786314283018 -37.82023778673241)", null, "4", "Melbourne Aquarium / Flinders Street", "GIS Team", "Mapbase", "20111018", "2" ]
+, [ "row-us7d.r2qw_h69k", "00000000-0000-0000-9E0A-1C9A6581D92A", 0, 1522743452, null, 1522743452, null, "{ }", "POINT (144.95546153614245 -37.82097269970027)", null, "5", "Spencer Street / Flinders Street", "GIS Team", "Mapbase", "20111018", "1" ]
+, [ "row-c9t4-2jkv_44xg", "00000000-0000-0000-BADB-B4E8F7650C83", 0, 1522743452, null, 1522743452, null, "{ }", "POINT (144.95356912978238 -37.821539117626855)", null, "6", "Victoria Police Centre / Flinders Street", "GIS Team", "Mapbase", "20111018", "D6" ]
+, [ "row-6q8a.9rfr-rsg3", "00000000-0000-0000-74C4-ACCACDF8533A", 0, 1522743452, null, 1522743452, null, "{ }", "POINT (144.95109855638137 -37.82190465062153)", null, "7", "The Goods Shed / Wurundjeri Way", "GIS Team", "Mapbase", "20111018", "D5" ]
+, [ "row-gis7_zd5k_g33b", "00000000-0000-0000-1CE8-21B8B2120AEB", 0, 1522743452, null, 1522743452, null, "{ }", "POINT (144.94773306350976 -37.82215722680455)", null, "8", "Docklands Park / Harbour Esplanade", "GIS Team", "Mapbase", "20111018", "D4" ]
+, [ "row-tihu_4cr8.cj4i", "00000000-0000-0000-AA3E-FE61C3FBDCDA", 0, 1522743452, null, 1522743452, null, "{ }", "POINT (144.94650837136655 -37.81865571347738)", null, "9", "Bourke Street / Harbour Esplanade", "GIS Team", "Mapbase", "20111018", "D3" ]
+, [ "row-w9kh~qc7f_ajcw", "00000000-0000-0000-F951-C44CFDA4BAB6", 0, 1522743452, null, 1522743452, null, "{ }", "POINT (144.94512063442602 -37.815426586135686)", null, "10", "Central Pier / Harbour Esplanade", "GIS Team", "Mapbase", "20111018", "D2" ]
+, [ "row-u92a-un3n.7dmv", "00000000-0000-0000-9091-9FE33E8C7E34", 0, 1522743452, null, 1522743452, null, "{ }", "POINT (144.94137823870162 -37.813414856197724)", null, "11", "New Quay Promenade / Docklands Drive", "GIS Team", "Mapbase", "20111018", "D10" ]
+, [ "row-t2ih.vtea.exww", "00000000-0000-0000-5A4A-679557CA69B6", 0, 1522743452, null, 1522743452, null, "{ }", "POINT (144.938645561825 -37.814464564872125)", null, "12", "Waterfront City / Docklands Drive", "GIS Team", "Mapbase", "20111018", "D11" ]
+, [ "row-j535.x2ic-vcj7", "00000000-0000-0000-E3BF-8351C2D9A182", 0, 1522743452, null, 1522743452, null, "{ }", "POINT (144.94655055842398 -37.814591782869805)", null, "13", "Etihad Statium / La Trobe Street", "GIS Team", "Mapbase", "20111018", "D1" ]
+, [ "row-masm.q7ud_9a6f", "00000000-0000-0000-3EA4-FC24A00D0A10", 0, 1522743452, null, 1522743452, null, "{ }", "POINT (144.95149406686252 -37.8131808636857)", null, "14", "Spencer Street / La Trobe Street", "GIS Team", "Mapbase", "20111018", "1" ]
+, [ "row-v2k7-8fpc~js98", "00000000-0000-0000-2F2E-3B708E293AD2", 0, 1522743452, null, 1522743452, null, "{ }", "POINT (144.95393532833103 -37.812487918072826)", null, "15", "King Street / La Trobe Street", "GIS Team", "Mapbase", "20111018", "2" ]
+, [ "row-ycuv_8ecm~qzka", "00000000-0000-0000-5497-2867E34A3F1E", 0, 1522743452, null, 1522743452, null, "{ }", "POINT (144.95644059700524 -37.811771476718356)", null, "16", "William Street / La Trobe Street", "GIS Team", "Mapbase", "20111018", "3" ]
+, [ "row-q724.vw4v_g6ex", "00000000-0000-0000-7A31-BE5D0EDD2897", 0, 1522743452, null, 1522743452, null, "{ }", "POINT (144.95891745116262 -37.81105928060848)", null, "17", "Queen Street / La Trobe Street", "GIS Team", "Mapbase", "20111018", "4" ]
+, [ "row-543f.nbcm~7ckd", "00000000-0000-0000-D896-B10EA522B7A7", 0, 1522743452, null, 1522743452, null, "{ }", "POINT (144.96136850025573 -37.810354377085794)", null, "18", "Elizabeth Street / La Trobe Street", "GIS Team", "Mapbase", "20111018", "5" ]
+, [ "row-75ff~km8x.6pvr", "00000000-0000-0000-8B7C-D28D679D53B3", 0, 1522743452, null, 1522743452, null, "{ }", "POINT (144.96384957029932 -37.80961884837298)", null, "19", "Swanston Street / La Trobe Street", "GIS Team", "Mapbase", "20111018", "6" ]
+, [ "row-dwyy-792n_rfty", "00000000-0000-0000-819B-E31C79451512", 0, 1522743452, null, 1522743452, null, "{ }", "POINT (144.96634474519394 -37.808876998255194)", null, "20", "Russell Street / La Trobe Street", "GIS Team", "Mapbase", "20111018", "7" ]
+, [ "row-vxxa-6yx7~ww6b", "00000000-0000-0000-A679-0D2C2A98B2BD", 0, 1522743452, null, 1522743452, null, "{ }", "POINT (144.96879323779422 -37.8081489607039)", null, "21", "Exhibition Street / La Trobe Street", "GIS Team", "Mapbase", "20111018", "8" ]
+, [ "row-svqb_dwa2.tdka", "00000000-0000-0000-31E3-3458573A8CED", 0, 1522743452, null, 1522743452, null, "{ }", "POINT (144.97070054175296 -37.80760292962929)", null, "22", "Victoria Street / La Trobe Street", "GIS Team", "Mapbase", "20111018", "9" ]
+, [ "row-tyin-g3vc_fivy", "00000000-0000-0000-415B-ED39CA9D7935", 0, 1522743452, null, 1522743452, null, "{ }", "POINT (144.9731036500197 -37.80801062631204)", null, "23", "Nicholson Street / Victoria Parade", "GIS Team", "Mapbase", "20111018", "10" ]
+, [ "row-6iq7.pjqm-uhr6", "00000000-0000-0000-4BB7-FCFBBD708142", 0, 1522743452, null, 1522743452, null, "{ }", "POINT (144.97291405751537 -37.80956201428191)", null, "24", "Albert Street / Nicholson Street", "GIS Team", "Mapbase", "20111018", "10" ]
+, [ "row-pzyf_ctbe-7nsd", "00000000-0000-0000-BC6A-9F30FE85BA35", 0, 1522743452, null, 1522743452, null, "{ }", "POINT (144.97406360491075 -37.81358116790275)", null, "25", "Parliament / Collins Street", "GIS Team", "Mapbase", "20111018", "8" ]
+, [ "row-uw7h.ji5r.scp3", "00000000-0000-0000-0595-E6C5F4A11D7E", 0, 1522743452, null, 1522743452, null, "{ }", "POINT (144.97453393804187 -37.81538859129167)", null, "26", "Spring Street / Flinders Street", "GIS Team", "Mapbase", "20111018", "8" ]
+, [ "row-a7iu_ww2v.2wac", "00000000-0000-0000-1A15-5E2082E2698A", 0, 1522743452, null, 1522743452, null, "{ }", "POINT (144.97196946163052 -37.81614537491179)", null, "27", "Exhibition Street / Flinders Street", "GIS Team", "Mapbase", "20111018", "7" ]
+, [ "row-mt55_3ihd~hzzy", "00000000-0000-0000-495A-932536275021", 0, 1522743452, null, 1522743452, null, "{ }", "POINT (144.97015587085124 -37.81667338583987)", null, "28", "Russell Street / Flinders Street", "GIS Team", "Mapbase", "20111018", "6" ]
+ ]
+}

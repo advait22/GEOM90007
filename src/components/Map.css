@@ -1,0 +1,29 @@
+.custom-pin {
+    height: 30px !important;
+    width: 30px !important;
+    display: flex !important;
+    justify-content: center !important;
+ }
+
+ .custom-pin Icon {
+    width: 100% !important;
+    height: 100% !important;
+ }
+
+ .text-values {
+    font-weight: 800;
+    text-transform: capitalize;
+    font-size: 14;
+ }
+
+ .values {
+    text-transform: capitalize;
+ }
+
+ .ui.default.dropdown:not(.button)>.text, .ui.dropdown:not(.button)>.default.text{
+    color: black;
+ }
+
+ .ui.selection.dropdown .menu {
+    width: 5rem !important;
+ }
