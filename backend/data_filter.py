@@ -72,29 +72,6 @@ def data_filter_timetable(df):
     df['departure_time'] = pd.to_datetime(df['departure_time'])
     return df
 
-def data_filter_timetable(arg):
-    df = pd.read_csv("timetable.csv",usecols=["arrival_time", "departure_time", "stop_name", "trip_headsign", "monday", "tuesday",
-                              "wednesday", "thursday", "friday", "saturday", "sunday"])
-    df = df.dropna(subset=["stop_name"])
-    df["stop_name"] = df["stop_name"]
-    df["metadata"] = (df["arrival_time"] + '_' + df["departure_time"] + '_' + df["stop_name"] + '_' + df["trip_headsign"])
-    if arg=="tram":
-        df = df.loc[df['stop_name'].str.contains("-")]
-        df.to_csv("trams.csv", index=False)
-    else:
-        df = df.loc[~df['stop_name'].str.contains("-")]
-        df.to_csv("trains.csv", index=False)
-
-def data_filter_tram_train_location():
-    df = pd.read_csv("timetable.csv", usecols=["stop_name", "stop_lat", "stop_lon"])
-    df.columns = ["name", "latitude", "longitude"]
-    df = df.dropna(subset=["name"])
-    df["longitude"] = df["longitude"].astype(str)
-    df["latitude"] = df["latitude"].astype(str)
-    df["point"] = (df["latitude"] + '_' + df["longitude"])
-    df = df.drop_duplicates(["point"])
-    df.to_csv("train_tram_location.csv", index=False)
-
 if __name__ == '__main__':
     gtfs_merge()
     readFile()
