@@ -1,5 +1,4 @@
 import pandas as pd
-import re
 
 def data_filter():
     df = pd.read_csv("dataset.csv",usecols=["Census year","Trading name", "Industry (ANZSIC4) description", "x coordinate", "y coordinate"])
@@ -12,26 +11,51 @@ def data_filter():
     location_details.to_csv("data.csv",index=False)
 
 def gtfs_merge():
-    pattern = r'railway|^([A-Z]*\d+[A-Z]*\-)'
+    trains = r'railway'
+    trams = r'^([A-Z]*\d+[A-Z]*\-)'
     stop_time = pd.read_csv("./gtfs/stop_times.txt")
     stops = pd.read_csv("./gtfs/stops.txt")
     trips = pd.read_csv("./gtfs/trips.txt")
-    # routes = pd.read_csv("./gtfs/routes.txt")
     calendar = pd.read_csv("./gtfs/calendar.txt")
-    # calendar_dates = pd.read_csv("./gtfs/calendar_dates.txt")
-    # shapes = pd.read_csv("./gtfs/shapes.txt")
     merged = pd.merge(stop_time, stops, on = "stop_id")
     merged = pd.merge(merged, trips, on = "trip_id")
-    # merged = pd.merge(merged, routes, on = "route_id")
     merged = pd.merge(merged, calendar, on = "service_id")
-    # merged = pd.merge(merged, calendar_dates, on = "service_id")
-    # merged = merged.drop(['route_type', 'route_color', 'route_text_color'])
-    # merged = pd.merge(merged, shapes, on = "shape_id")
-    # filtered = merged.loc[merged['trip_headsign'].str.lower().str.contains("melbourne")]
-    filtered = merged.loc[merged['stop_name'].str.contains(pattern, case=False, regex=True)]
-    print(filtered)
-    filtered.to_csv('victoria_tram_train_timetable.csv',index=False)
-    
+    trains = merged.loc[merged['stop_name'].str.contains(trains, case=False, regex=True)]
+    trains = trains[["arrival_time", "departure_time", "stop_name", "stop_lat", "stop_lon", 
+                            "trip_headsign", "direction_id", "monday", "tuesday",
+                            "wednesday", "thursday", "friday", "saturday", "sunday"]]
+    trams = merged.loc[merged['stop_name'].str.contains(trams, case=False, regex=True)]
+    trams = trams[["arrival_time", "departure_time", "stop_name", "stop_lat", "stop_lon", 
+                            "trip_headsign", "direction_id", "monday", "tuesday",
+                            "wednesday", "thursday", "friday", "saturday", "sunday"]]
+    trains.to_csv('train_timetable.csv',index=False)
+    trams.to_csv('tram_timetable.csv',index=False)
+
+def data_filter_timetable(arg):
+    df = pd.read_csv("timetable.csv",usecols=["arrival_time", "departure_time", "stop_name", "trip_headsign", "monday", "tuesday",
+                              "wednesday", "thursday", "friday", "saturday", "sunday"])
+    df = df.dropna(subset=["stop_name"])
+    df["stop_name"] = df["stop_name"]
+    df["metadata"] = (df["arrival_time"] + '_' + df["departure_time"] + '_' + df["stop_name"] + '_' + df["trip_headsign"])
+    if arg=="tram":
+        df = df.loc[df['stop_name'].str.contains("-")]
+        df.to_csv("trams.csv", index=False)
+    else:
+        df = df.loc[~df['stop_name'].str.contains("-")]
+        df.to_csv("trains.csv", index=False)
+
+def data_filter_tram_train_location():
+    df = pd.read_csv("timetable.csv", usecols=["stop_name", "stop_lat", "stop_lon"])
+    df.columns = ["name", "latitude", "longitude"]
+    df = df.dropna(subset=["name"])
+    df["longitude"] = df["longitude"].astype(str)
+    df["latitude"] = df["latitude"].astype(str)
+    df["point"] = (df["latitude"] + '_' + df["longitude"])
+    df = df.drop_duplicates(["point"])
+    df.to_csv("train_tram_location.csv", index=False)
+
 if __name__ == '__main__':
-    # data_filter()
     gtfs_merge()
+    # data_filter_timetable("tram")
+    # data_filter_timetable("train")
+    # data_filter_tram_train_location()
