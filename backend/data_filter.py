@@ -24,6 +24,7 @@ def gtfs_merge():
     trains = trains[["arrival_time", "departure_time", "stop_name", "stop_lat", "stop_lon", 
                             "trip_headsign", "direction_id", "monday", "tuesday",
                             "wednesday", "thursday", "friday", "saturday", "sunday"]]
+    trains = trains.loc[~trains['stop_name'].str.contains(trams, case=False, regex=True)]
     trams = merged.loc[merged['stop_name'].str.contains(trams, case=False, regex=True)]
     trams = trams[["arrival_time", "departure_time", "stop_name", "stop_lat", "stop_lon", 
                             "trip_headsign", "direction_id", "monday", "tuesday",
