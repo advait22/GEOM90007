@@ -9,6 +9,14 @@ import re
 
 app = flask.Flask(__name__)
 
+def readFile():
+    poi_data = pd.read_csv("data.csv",usecols=["name","description","longitude","latitude"])
+    tram_data = pd.read_csv("trams.csv", usecols=["arrival_time", "departure_time", "stop_name", "trip_headsign", "monday", "tuesday","wednesday", "thursday", "friday", "saturday", "sunday","metadata"])
+    train_data = pd.read_csv("trains.csv", usecols=["arrival_time", "departure_time", "stop_name", "trip_headsign", "monday", "tuesday","wednesday", "thursday", "friday", "saturday", "sunday","metadata"])
+    tram_train_location_data = pd.read_csv("train_tram_location.csv", usecols=["name", "latitude", "longitude"])
+    return  poi_data,tram_data,train_data,tram_train_location_data
+poi_data,tram_data,train_data, tram_train_loacation_data = readFile()
+
 #/apis/getLocation?name=tram&lat=-37.8290&long=144.9570&r=1
 # name = bar/restaurants/train/tram etc.
 # lat = latitude of current location
@@ -35,20 +43,16 @@ def get_location():
     center_point = (float(lat),float(long)) # current location of user
     if desc ==  "train" or desc =="tram":
         # load and pre process the data
-        df = pd.read_csv("timetable.csv", usecols=["stop_name", "stop_lat", "stop_lon"])
-        df.columns = ["name", "latitude", "longitude"]
+        df = tram_train_loacation_data
         df["name"] = df["name"].str.lower()
-        df = df.dropna(subset=["name"])
         df["longitude"] = df["longitude"].astype(str)
         df["latitude"] = df["latitude"].astype(str)
-        df["point"] = (df["latitude"] + '_' + df["longitude"])
         if desc == "tram":
             location_details = df.loc[df['name'].str.contains("-")]
         else:
             location_details = df.loc[~df['name'].str.contains("-")]
-        location_details = location_details.drop_duplicates(["point"])
     else:
-        df = pd.read_csv("data.csv",usecols=["name","description","longitude","latitude"])
+        df = poi_data
         df["description"] = df["description"].str.lower()
         location_details = df.loc[df['description'].str.contains(desc)]
     result = []
@@ -83,15 +87,12 @@ def get_timetable():
         type = request.args['type']
     else:
         return "Error: No value for argument type"
-    df = pd.read_csv("timetable.csv", usecols=["arrival_time","departure_time","stop_name","trip_headsign","monday","tuesday","wednesday","thursday","friday","saturday","sunday"])
-    df = df.dropna(subset=["stop_name"])
-    df["stop_name"] = df["stop_name"].str.lower()
-    df["metadata"] = (df["arrival_time"] + '_' + df["departure_time"]+'_'+df["stop_name"]+'_'+df["trip_headsign"])
     if type == "tram":
         station_name = re.sub(r" ?\([^)]+\)", "", station_name)
-        df = df.loc[df['stop_name'].str.contains("-")]
+        df = tram_data
     else:
-        df = df.loc[~df['stop_name'].str.contains("-")]
+        df = train_data
+    df["stop_name"] = df["stop_name"].str.lower()
     today = date.today().weekday()
     # 0 = Monday & 6 = Sunday
     df = df.loc[df.iloc[:, 4 + today] == 1]
