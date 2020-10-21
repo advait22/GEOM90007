@@ -56,8 +56,8 @@ def get_location():
     result = []
     for i in range(len(location_details)):
         dict = {}
-        long_t = location_details['longitude'].iloc[i]
-        lat_t = location_details['latitude'].iloc[i]
+        long_t = str(location_details['longitude'].iloc[i])
+        lat_t = str(location_details['latitude'].iloc[i])
         if long_t.strip() and lat_t.strip():
             # count and find place around given radius
             test_point = (float(lat_t),float(long_t))
@@ -112,4 +112,4 @@ def get_timetable():
 
 
 if __name__ == '__main__':
-    readFile()
+    app.run()
