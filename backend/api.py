@@ -119,8 +119,10 @@ def get_timetable():
     df = df.loc[df['direction_id']==int(direction)]
     df = df.sort_values(by="departure_time")
     df = df.drop_duplicates(["metadata"])
-    time = time.astimezone(timezone).time().strftime("%H:%M")
+    time = time.astimezone(timezone).time()
+    df['departure_time'] = pd.to_datetime(df['departure_time']).dt.time
     df = df[df["departure_time"] > time].head(3)
+    df['arrival_time'] = pd.to_datetime(df['arrival_time']).dt.time
     response = json.dumps(json.loads(df.to_json(orient='records')), indent=2)
     return response
 
