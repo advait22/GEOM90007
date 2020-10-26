@@ -1,15 +1,26 @@
 import flask
 import pandas as pd
 import json
-from flask import request,jsonify
+from flask import request
 from geopy import distance
-from datetime import date
 from datetime import datetime
 import re
+import pytz
+import collections
 
 app = flask.Flask(__name__)
 
 def readFile():
+    counter = { 1 : { 'bars':1000, 'restaurants':1000,'theatre':1000,'hotel':1000,'tram':1000,'train':1000,'museum':1000},
+                2 : {'bars':1000, 'restaurants':1000,'theatre':1000,'hotel':1000,'tram':1000,'train':1000,'museum':1000},
+                3 : {'bars':1000, 'restaurants':1000,'theatre':1000,'hotel':1000,'tram':1000,'train':1000,'museum':1000},
+                4 : {'bars':1000, 'restaurants':1000,'theatre':1000,'hotel':1000,'tram':1000,'train':1000,'museum':1000},
+                5 : {'bars':1000, 'restaurants':1000,'theatre':1000,'hotel':1000,'tram':1000,'train':1000,'museum':1000},
+                6 : {'bars':1000, 'restaurants':1000,'theatre':1000,'hotel':1000,'tram':1000,'train':1000,'museum':1000},
+                7 : {'bars':1000, 'restaurants':1000,'theatre':1000,'hotel':1000,'tram':1000,'train':1000,'museum':1000},
+                8 : {'bars':1000, 'restaurants':1000,'theatre':1000,'hotel':1000,'tram':1000,'train':1000,'museum':1000},
+                9 : {'bars':1000, 'restaurants':1000,'theatre':1000,'hotel':1000,'tram':1000,'train':1000,'museum':1000},
+                10 : {'bars':1000, 'restaurants':1000,'theatre':1000,'hotel':1000,'tram':1000,'train':1000,'museum':1000}}
     poi_data = pd.read_csv("data.csv",usecols=["name","description","longitude","latitude"])
 
     tram_data = pd.read_csv("tram_data.csv")
@@ -17,9 +28,9 @@ def readFile():
     tram_location_data = pd.read_csv("tram_location_data.csv")
     train_location_data = pd.read_csv("train_location_data.csv")
     
-    return  poi_data,tram_data,train_data,tram_location_data,train_location_data
+    return  poi_data,tram_data,train_data,tram_location_data,train_location_data, counter
 
-poi_data,tram_data,train_data, tram_loacation_data, train_location_data = readFile()
+poi_data,tram_data,train_data, tram_loacation_data, train_location_data, counter = readFile()
 
 #/apis/getLocation?name=tram&lat=-37.8290&long=144.9570&r=1
 # name = bar/restaurants/train/tram etc.
@@ -70,6 +81,8 @@ def get_location():
                 result.append(dict)
     response = pd.DataFrame(result)
     response = json.dumps(json.loads(response.to_json(orient='records')), indent=2)
+    radius = int(radius)
+    counter[radius][desc] = counter[radius][desc] + 1
     return response
 
 #/apis/getTimetable?type=train&name=southern cross railway station&direction=1
@@ -96,20 +109,35 @@ def get_timetable():
         df = tram_data
     else:
         df = train_data
+    timezone = pytz.timezone("Australia/Melbourne")
+    time = datetime.now()
+    today = time.astimezone(timezone).date().weekday()
 
-    today = date.today().weekday()
     # 0 = Monday & 6 = Sunday
     df = df.loc[df.iloc[:, 5 + today] == 1]
     df = df.loc[df['stop_name'].str.contains(station_name)]
     df = df.loc[df['direction_id']==int(direction)]
-    time = datetime.now().time().strftime("%H:%M")
     df = df.sort_values(by="departure_time")
     df = df.drop_duplicates(["metadata"])
+    time = time.astimezone(timezone).time().strftime("%H:%M")
     df = df[df["departure_time"] > time].head(3)
     response = json.dumps(json.loads(df.to_json(orient='records')), indent=2)
     return response
 
-
+#/apis/getCounter?r=1
+# r = selected radius
+@app.route('/apis/getCounter',methods=['GET'])
+def get_counter():
+    if 'r' in request.args:
+        radius = request.args['r']
+    else:
+        return "Error: No value for argument radius"
+    radius = int(radius)
+    count = counter[radius]
+    count = sorted(count.items(), key=lambda x: x[1], reverse=True)
+    count = collections.OrderedDict(count)
+    response = json.dumps(count)
+    return response
 
 if __name__ == '__main__':
     app.run()
