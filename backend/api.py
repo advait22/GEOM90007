@@ -11,16 +11,16 @@ import collections
 app = flask.Flask(__name__)
 
 def readFile():
-    counter = { 1 : { 'bars':1000, 'restaurants':1000,'theatre':1000,'hotel':1000,'tram':1000,'train':1000,'museum':1000},
-                2 : {'bars':1000, 'restaurants':1000,'theatre':1000,'hotel':1000,'tram':1000,'train':1000,'museum':1000},
-                3 : {'bars':1000, 'restaurants':1000,'theatre':1000,'hotel':1000,'tram':1000,'train':1000,'museum':1000},
-                4 : {'bars':1000, 'restaurants':1000,'theatre':1000,'hotel':1000,'tram':1000,'train':1000,'museum':1000},
-                5 : {'bars':1000, 'restaurants':1000,'theatre':1000,'hotel':1000,'tram':1000,'train':1000,'museum':1000},
-                6 : {'bars':1000, 'restaurants':1000,'theatre':1000,'hotel':1000,'tram':1000,'train':1000,'museum':1000},
-                7 : {'bars':1000, 'restaurants':1000,'theatre':1000,'hotel':1000,'tram':1000,'train':1000,'museum':1000},
-                8 : {'bars':1000, 'restaurants':1000,'theatre':1000,'hotel':1000,'tram':1000,'train':1000,'museum':1000},
-                9 : {'bars':1000, 'restaurants':1000,'theatre':1000,'hotel':1000,'tram':1000,'train':1000,'museum':1000},
-                10 : {'bars':1000, 'restaurants':1000,'theatre':1000,'hotel':1000,'tram':1000,'train':1000,'museum':1000}}
+    counter = { 1 : { 'bars':1500, 'restaurants':1500,'theatre':1000,'hotel':1000,'tram':1500,'train':1000,'museum':1000},
+                2 : {'bars':1500, 'restaurants':1500,'theatre':1000,'hotel':1000,'tram':1500,'train':1000,'museum':1000},
+                3 : {'bars':1500, 'restaurants':1500,'theatre':1000,'hotel':1000,'tram':1500,'train':1000,'museum':1000},
+                4 : {'bars':1500, 'restaurants':1500,'theatre':1000,'hotel':1000,'tram':1500,'train':1000,'museum':1000},
+                5 : {'bars':1500, 'restaurants':1500,'theatre':1000,'hotel':1000,'tram':1500,'train':1000,'museum':1000},
+                6 : {'bars':1500, 'restaurants':1500,'theatre':1000,'hotel':1000,'tram':1500,'train':1000,'museum':1000},
+                7 : {'bars':1500, 'restaurants':1500,'theatre':1000,'hotel':1000,'tram':1500,'train':1000,'museum':1000},
+                8 : {'bars':1500, 'restaurants':1500,'theatre':1000,'hotel':1000,'tram':1500,'train':1000,'museum':1000},
+                9 : {'bars':1500, 'restaurants':1500,'theatre':1000,'hotel':1000,'tram':1500,'train':1000,'museum':1000},
+                10 : {'bars':1500, 'restaurants':1500,'theatre':1000,'hotel':1000,'tram':1500,'train':1000,'museum':1000}}
     poi_data = pd.read_csv("data.csv",usecols=["name","description","longitude","latitude"])
 
     tram_data = pd.read_csv("tram_data.csv")
