@@ -46,6 +46,17 @@ export const DROP_DOWN = [
 
   export const RADIUS = [
     {
+      key: '1 kms',
+      text: '1 kms',
+      value: '1',
+      // image: { avatar: true, src: '../assets/images/beer.jpg' },
+    },
+    {
+      key: '2 kms',
+      text: '2 kms',
+      value: '2',
+      // image: { avatar: true, src: '../assets/images/beer.jpg' },
+    },{
         key: '3 kms',
         text: '3 kms',
         value: '3',
