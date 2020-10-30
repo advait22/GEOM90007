@@ -47,7 +47,7 @@ export default class Map extends Component {
              stats:[]
           };
     }
-
+  // get the selected value from catergory dropdown
     getSelectedValue = (value) => {
         this.setState({selectedCategory:null,requestedData:[]},()=>{
             this.setState({selectedCategory:value.toLowerCase()})
@@ -55,6 +55,7 @@ export default class Map extends Component {
         
     }
 
+    // API call to show stats to on the frontend on click of the info button
     showStats = () =>{
         if(this.state.selectedCategory !== null & this.state.radius !== null & this.state.requestedData.length > 0){
             setInterval(
@@ -73,6 +74,7 @@ export default class Map extends Component {
         }
     }
 
+    // API call to get the live data from google places and details api
     getDataFromGoogle = (value) => {
         fetch('https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input='+value+
         '&inputtype=textquery&fields=photos,formatted_address,name,rating,place_id,geometry,price_level,user_ratings_total,opening_hours/open_now&key=AIzaSyBZHgvSAwAB3OmZ-GRX115M90gp81nQ-Ks').then(res => res.json()).then(data => this.setState({markerClicked:true,openModal:true,placeId:data.candidates[0].place_id,ref:null}, 
@@ -93,6 +95,7 @@ export default class Map extends Component {
             ).catch(er => {alert('Refresh the page, sorry for inconvinience')})
     }
 
+    // close the popover when clicked outside the modal popup
     closeMarker = () => {
         this.setState({googleReview:{},placeId:null,markerClicked:false,openModal:false,
         openTrainModal:false,openStatsModal:false}, ()=>{
@@ -100,12 +103,14 @@ export default class Map extends Component {
         })
     }
 
+    // get radius value from child component 
     getRadiusValue = (value) => {
        this.setState({radius:value.split(" ")[0]}, ()=>{
           
        })
     }
 
+    // API call to backend to get the data to display on the map
     getData = () =>{ 
         if(this.state.radius !== null & this.state.selectedCategory !== null) {
         this.setState({isLoading:true}, () => {
@@ -131,6 +136,8 @@ export default class Map extends Component {
     }
     }
 
+    // API call to backend to get the timetable data to display on the map
+
     getTimetableData = (value,category,direction) => {
         fetch('https://shielded-bastion-90356.herokuapp.com/apis/getTimetable?type='+category+'&name='+
         value+'&direction='+direction).then(res => res.json()).then(
@@ -144,6 +151,7 @@ export default class Map extends Component {
         ).catch(err => {alert('Refresh the page, sorry for inconvinience')})
     }
 
+    // get user location when they logon to the website
     componentDidMount() {
         let self = this
         if (navigator.geolocation) {
@@ -187,12 +195,6 @@ export default class Map extends Component {
       
       <Grid container >
       <Grid item xs = {8} >
-          {/* {process.env.REACT_APP_MAPBOX_KEY} 
-          "pk.eyJ1IjoieW91bmdraW0iLCJhIjoiY2prajlmdTRrNXQwcTNybWw5d3ZkcWdqNiJ9.rnHLI-KndMeksoZT2cCjSg"*/}
-
-        {/* mapbox://styles/youngkim/ckeun7ycaa92e19n1a9a8chl4
-         "mapbox://styles/mapbox/light-v10"
- */}
           <ReactMapGL {...this.state.viewport} mapStyle= "mapbox://styles/jabanto/ckgj9myqo0qzz1arr8axy8t0m"  
             mapboxApiAccessToken = "pk.eyJ1IjoiamFiYW50byIsImEiOiJja2VrbHlqZ2MxajZ5MnVvNzliYjgwZ3ZqIn0.op32x_RIIs9tx7aM3NBhkw"
             onViewportChange={viewport => this.setState({ viewport })}>

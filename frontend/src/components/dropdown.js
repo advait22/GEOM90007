@@ -8,6 +8,7 @@ export default class DropDown extends Component {
       value: null
     }
   }
+  // get and pass on the selected value from catergory dropdown to the parent component
   getSelectedValue = (event) => {
     this.props.onvalueChange(event.target.textContent)
     this.setState({value:event.target.textContent})

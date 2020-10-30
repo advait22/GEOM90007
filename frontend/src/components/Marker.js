@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 import { Icon } from 'semantic-ui-react';
 import { Marker} from "react-map-gl";
 
-
+// marker component to render the markers on the mapbox.
 export default class Markers extends Component {
 
+// pass the data to the parent component when user selects tram/train or any other category marker
   getMarkerName = (name,category,direction) => {
       if(category !== "tram" & category !== "train" & direction === undefined){
           this.props.getDataForGoogle(name)
