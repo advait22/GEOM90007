@@ -1,6 +1,9 @@
 import pandas as pd
 
 def data_filter():
+    """
+        Filter places of interest recorded in 2019
+    """
     df = pd.read_csv("dataset.csv",usecols=["Census year","Trading name", "Industry (ANZSIC4) description", "x coordinate", "y coordinate"])
     df.columns = ["year","name","description","longitude","latitude"]
     df["year"] = df["year"].fillna(2019)
@@ -11,6 +14,9 @@ def data_filter():
     location_details.to_csv("data.csv",index=False)
 
 def gtfs_merge():
+    """
+        Merge PTV GTFS data for trains and tram
+    """
     trains = r'railway'
     trams = r'^([A-Z]*\d+[A-Z]*\-)'
     stop_time = pd.read_csv("./gtfs/stop_times.txt")
@@ -33,6 +39,9 @@ def gtfs_merge():
     trams.to_csv('tram_timetable.csv',index=False)
 
 def readFile():
+    """
+        Read the datasets and filter our the necessary columns to be used in the API
+    """
     poi_data = pd.read_csv("data.csv",usecols=["name","description","longitude","latitude"])
 
     tram_data_super = pd.read_csv("tram_timetable.csv")
@@ -55,6 +64,9 @@ def readFile():
     return  poi_data,tram_data,train_data,tram_location_data,train_location_data
 
 def data_filter_tram_train_location(df):
+    """
+        Filter out train and tram locations
+    """
     df.columns = ["name", "latitude", "longitude","direction"]
     df = df.dropna(subset=["name"])
     df["name"] = df["name"].str.lower()
@@ -65,6 +77,9 @@ def data_filter_tram_train_location(df):
     return df
 
 def data_filter_timetable(df):
+    """
+        Filter out train and tram stops and timetable
+    """
     df = df.dropna(subset=["stop_name"])
     df["stop_name"] = df["stop_name"].str.lower()
     df["metadata"] = (df["arrival_time"] + '_' + df["departure_time"] + '_' + df["stop_name"] + '_' + df["trip_headsign"])
