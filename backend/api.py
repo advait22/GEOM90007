@@ -11,6 +11,10 @@ import collections
 app = flask.Flask(__name__)
 
 def readFile():
+    """
+        Read datasets and return them as dataframes
+    """
+    # counter to hold statistical information of most searched category
     counter = { 1 : { 'bars':1500, 'restaurants':1500,'theatre':1000,'hotel':1000,'tram':1500,'train':1000,'museum':1000},
                 2 : {'bars':1500, 'restaurants':1500,'theatre':1000,'hotel':1000,'tram':1500,'train':1000,'museum':1000},
                 3 : {'bars':1500, 'restaurants':1500,'theatre':1000,'hotel':1000,'tram':1500,'train':1000,'museum':1000},
@@ -21,8 +25,11 @@ def readFile():
                 8 : {'bars':1500, 'restaurants':1500,'theatre':1000,'hotel':1000,'tram':1500,'train':1000,'museum':1000},
                 9 : {'bars':1500, 'restaurants':1500,'theatre':1000,'hotel':1000,'tram':1500,'train':1000,'museum':1000},
                 10 : {'bars':1500, 'restaurants':1500,'theatre':1000,'hotel':1000,'tram':1500,'train':1000,'museum':1000}}
+    
+    # read dataset containing POIs
     poi_data = pd.read_csv("data.csv",usecols=["name","description","longitude","latitude"])
-
+    
+    # read dataset containing train and tram locations and timetables
     tram_data = pd.read_csv("tram_data.csv")
     train_data = pd.read_csv("train_data.csv")
     tram_location_data = pd.read_csv("tram_location_data.csv")
@@ -30,6 +37,7 @@ def readFile():
     
     return  poi_data,tram_data,train_data,tram_location_data,train_location_data, counter
 
+# read files and store datasets into dataframes
 poi_data,tram_data,train_data, tram_loacation_data, train_location_data, counter = readFile()
 
 #/apis/getLocation?name=tram&lat=-37.8290&long=144.9570&r=1
@@ -39,6 +47,9 @@ poi_data,tram_data,train_data, tram_loacation_data, train_location_data, counter
 # r = radius
 @app.route('/apis/getLocation',methods=['GET'])
 def get_location():
+    """
+        API to get POIs and train and tram stops location within a radius
+    """
     if 'name' in request.args:
         desc = request.args['name']
     else:
@@ -91,6 +102,9 @@ def get_location():
 # direction = 1/0
 @app.route('/apis/getTimetable',methods=['GET'])
 def get_timetable():
+    """
+        API to get train and tram stop timetables
+    """
     if 'name' in request.args:
         station_name = request.args['name'].lower()
     else:
@@ -130,6 +144,9 @@ def get_timetable():
 # r = selected radius
 @app.route('/apis/getCounter',methods=['GET'])
 def get_counter():
+    """
+        API to get statistical information
+    """
     if 'r' in request.args:
         radius = request.args['r']
     else:
