@@ -26,11 +26,15 @@ def gtfs_merge():
     merged = pd.merge(stop_time, stops, on = "stop_id")
     merged = pd.merge(merged, trips, on = "trip_id")
     merged = pd.merge(merged, calendar, on = "service_id")
+    
+    # filter out records pertaining to train stops from the merged gtfs data
     trains = merged.loc[merged['stop_name'].str.contains(trains, case=False, regex=True)]
     trains = trains[["arrival_time", "departure_time", "stop_name", "stop_lat", "stop_lon", 
                             "trip_headsign", "direction_id", "monday", "tuesday",
                             "wednesday", "thursday", "friday", "saturday", "sunday"]]
     trains = trains.loc[~trains['stop_name'].str.contains(trams, case=False, regex=True)]
+    
+    # filter out records pertaining to tram stops from the merged gtfs data
     trams = merged.loc[merged['stop_name'].str.contains(trams, case=False, regex=True)]
     trams = trams[["arrival_time", "departure_time", "stop_name", "stop_lat", "stop_lon", 
                             "trip_headsign", "direction_id", "monday", "tuesday",
@@ -44,16 +48,19 @@ def readFile():
     """
     poi_data = pd.read_csv("data.csv",usecols=["name","description","longitude","latitude"])
 
+    # Preprocess tram timetable and write to file as input to API
     tram_data_super = pd.read_csv("tram_timetable.csv")
     tram_data = tram_data_super[["arrival_time", "departure_time", "stop_name", "trip_headsign","direction_id","monday", "tuesday","wednesday", "thursday", "friday", "saturday", "sunday"]]
-    tram_data =data_filter_timetable(tram_data)
+    tram_data = data_filter_timetable(tram_data)
     tram_data.to_csv('tram_data.csv',index=False)
 
+    # Preprocess train timetable and write to file as input to API 
     train_data_super = pd.read_csv("train_timetable.csv")
     train_data = train_data_super[["arrival_time", "departure_time", "stop_name", "trip_headsign", "direction_id", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]]
     train_data = data_filter_timetable(train_data)
     train_data.to_csv('train_data.csv',index=False)
-
+    
+    # Preprocess train and tram locations and write to file as input to API
     tram_location_data = tram_data_super[["stop_name", "stop_lat", "stop_lon","direction_id"]]
     train_location_data = train_data_super[["stop_name", "stop_lat", "stop_lon","direction_id"]]
     tram_location_data = data_filter_tram_train_location(tram_location_data)
@@ -65,7 +72,7 @@ def readFile():
 
 def data_filter_tram_train_location(df):
     """
-        Filter out train and tram locations
+        Filter and preprocess train and tram locations
     """
     df.columns = ["name", "latitude", "longitude","direction"]
     df = df.dropna(subset=["name"])
@@ -78,7 +85,7 @@ def data_filter_tram_train_location(df):
 
 def data_filter_timetable(df):
     """
-        Filter out train and tram stops and timetable
+        Filter and preprocess train and tram stops and timetable
     """
     df = df.dropna(subset=["stop_name"])
     df["stop_name"] = df["stop_name"].str.lower()
